@@ -3,19 +3,19 @@
 - name: Create an ec2 instance
   ec2:
     key_name: "{{ keypair }}"
-    aws_access_key: "AKIAJO54RBO7HDLQBDVQ"
-    aws_secret_key: "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"
-    group: RedhatLinux-SG # security group name
-    instance_type: "{{ instance_type}}"
+    aws_access_key: "{{ aws_access_key }}"
+    aws_secret_key: "{{ aws_secret_key }}"
+    group: "{{ sgname }}" # security group name
+    instance_type: "{{ instance_type }}"
     image: "{{ ami }}"
     wait: true
     region: "{{ region }}"
     count: 1  # default
     count_tag:
-      Name: "Demo"
+      Name: "Demo_A"
     instance_tags:
-      Name: "Demo"
-    vpc_subnet_id: "subnet-392cc418"
+      Name: "Demo_A"
+    vpc_subnet_id: "{{ vsubnetid }}"
     assign_public_ip: yes
   register: ec2
 
