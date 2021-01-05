@@ -1,0 +1,15 @@
+   
+    - name: Update ubuntu repo
+      shell: apt-get update -y
+      become: yes
+
+    - name: Install dependencies
+      apt: name={{ item }} state=present
+      become: yes
+      with_items:
+       - python3
+       - python3-pip
+       - python-setuptools
+       - python-dev
+       - build-essential
+       - python-mysqldb

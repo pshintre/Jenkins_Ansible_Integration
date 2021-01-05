@@ -1,0 +1,7 @@
+---
+# vars file for aws_ubuntu
+
+region: us-east-1
+instance_type: t2.micro
+ami: ami-039a49e70ea773ffc # Redhat
+keypair: redhat_key # pem file name

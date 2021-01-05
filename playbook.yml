@@ -1,0 +1,34 @@
+# We only have db server right now. Let us create a new play to install and configure web application on the web server
+# Task: Create a new play called "Deploy a web server" and target host "web_server". Apply roles "python" and "flask_web" to it.
+#
+## ------------------------------
+##           BEFORE
+## ------------------------------
+#-
+#  name: Deploy a mysql DB
+#  hosts: db_server
+#  roles:
+#    - python
+#    - mysql_db
+
+
+# ------------------------------
+#           AFTER
+# ------------------------------
+
+- name: Create new ubuntu VM
+  hosts: localhost
+  roles:
+    - aws_ubuntu
+
+- name: Deploy a mysql DB
+  hosts: dbwebservers
+  roles:
+    - python
+    - mysql_db
+
+- name: Deploy a Web Server
+  hosts: dbwebservers
+  roles:
+    - python
+    - flask_web
