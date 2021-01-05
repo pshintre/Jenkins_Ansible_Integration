@@ -3,5 +3,7 @@
 
 region: us-east-1
 instance_type: t2.micro
-ami: ami-039a49e70ea773ffc # Redhat
-keypair: redhat_key # pem file name
+ami: ami-0a0ddd875a1ea2c7f # Ubuntu
+keypair: aws-devops # pem file name
+sgname: SG1 #security group name
+vsubnetid: subnet-3bb46d64
