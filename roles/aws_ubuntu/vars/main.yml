@@ -3,7 +3,7 @@
 
 region: us-east-1
 instance_type: t2.micro
-ami: ami-0a0ddd875a1ea2c7f # Ubuntu
+ami: ami-0739f8cdb239fe9ae # Ubuntu
 keypair: aws-devops # pem file name
 sgname: SG1 #security group name
-vsubnetid: subnet-3bb46d64
+vsubnetid: subnet-52fb2073
